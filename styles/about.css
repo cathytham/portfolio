@@ -31,6 +31,15 @@ nav{
   overflow:hidden;
   padding:0;
 }
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 25vh;
+  background: linear-gradient(to bottom, transparent 0%, var(--b50) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
 .hero-inner{
   position:relative;z-index:5;
   width:100%;max-width:1100px;
@@ -213,9 +222,6 @@ nav{
 .photo-tag-dot{width:7px;height:7px;border-radius:50%;background:#52CFA0;animation:pulse 2.5s ease-in-out infinite;flex-shrink:0;}
 .photo-tag-text{font-size:11px;letter-spacing:.06em;color:var(--b800);white-space:nowrap;}
 
-/* ═══════════════════════════════════════
-   ABOUT BODY (skills, education, statement)
-═══════════════════════════════════════ */
 .about-sec{
   padding:80px 40px 64px;
   position:relative;z-index:10;

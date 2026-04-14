@@ -1,8 +1,19 @@
 /* ── MENU OVERLAY ── */
 async function initMenuOverlay() {
     try {
-        const response = await fetch('global-overlay.html');
-        const html = await response.text();
+        const isProject = window.location.pathname.includes('/projects/');
+        const prefix = isProject ? '../' : '';
+
+        const response = await fetch(prefix + 'global-overlay.html');
+        let html = await response.text();
+
+        if (isProject) {
+            html = html.replace(/href="main\.html/g, 'href="../main.html');
+            html = html.replace(/href="side-work\.html/g, 'href="../side-work.html');
+            html = html.replace(/href="about\.html/g, 'href="../about.html');
+            html = html.replace(/href="\.\/cv\//g, 'href="../cv/');
+        }
+
         document.body.insertAdjacentHTML('afterbegin', html);
 
         const menuBtn = document.getElementById('menu-btn');
@@ -26,14 +37,18 @@ async function initMenuOverlay() {
         });
 
         // Close menu when clicking navigation links
-        const navLinks = menuOverlay.querySelectorAll('.menu-nav a');
+        const navLinks = menuOverlay.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
 
         function closeMenu() {
-            menuOverlay.classList.remove('open');
-            menuBtn.setAttribute('aria-expanded', 'false');
+            // Add a slight delay to allow native click actions (navigation) to complete
+            // before `pointer-events: none` takes effect.
+            setTimeout(() => {
+                menuOverlay.classList.remove('open');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }, 50);
         }
 
     } catch (error) {
