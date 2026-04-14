@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cathy Tham — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/menu-overlay.css"/>
+<link rel="stylesheet" href="styles/base.css"/>
+<link rel="stylesheet" href="styles/mainStyle.css"/>
+</head>
+<body>
+
+<!-- Background sparkles container -->
+<div class="sparkles-container" id="sparkles-container" aria-hidden="true"></div>
+
+<!-- Custom star cursor -->
+<div class="cursor" id="cursor">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+  </svg>
+</div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ── NAV ── -->
+<nav aria-label="Site navigation">
+  <a class="nav-logo" href="#">Cathy Tham</a>
+  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-overlay">
+    Menu
+    <svg viewBox="0 0 24 24"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg"></div>
+
+  <!-- Interactive canvas drawing -->
+  <canvas id="drawing-canvas" aria-hidden="true"></canvas>
+
+  <!-- Layered decorative shapes -->
+  <div class="bunny-zone" aria-label="Bunny illustration" role="img"></div>
+  <div class="sb sb1" aria-hidden="true"></div>
+  <div class="sb sb2" aria-hidden="true"></div>
+  <div class="sb sb3" aria-hidden="true"></div>
+
+
+  <div class="hi-kicker" aria-label="Hi, I am Cathy Tham">
+    <span class="hi-dash"></span>
+    Hi, I am Cathy Tham
+  </div>
+
+  <!-- Hero heading -->
+<div class="hero-type" aria-label="UI UX Web Designer">
+  
+  <!-- Title -->
+  <div >
+    <div class="hero-line"><span class="hero-display">UI/UX</span></div>
+    <div class="hero-line"><span class="hero-display">WEB</span></div>
+    <div class="hero-line"><span class="hero-display" style="margin-bottom: 5px; margin-right: 20px;">DESIGN</span></div>
+  </div>
+
+  <!-- Description -->
+  <p class="hero-desc">
+    I design and build aesthetic websites focused on clarity and experience.
+  </p>
+
+  <!-- Buttons -->
+  <div class="hero-actions">
+    <a class="about-cta" href="#work">See my Work</a>
+    <a class="about-cta" href="#contact">Get in touch →</a>
+  </div>
+
+</div>
+
+  
+  <!-- Scroll hint -->
+  <a class="scroll-hint" href="#work" aria-label="Scroll to work">
+    <div class="scroll-circle">
+      <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+    </div>
+    <span class="scroll-label">Scroll</span>
+  </a>
+
+  <!-- Clear canvas -->
+  <button class="canvas-hint" id="clear-canvas" aria-label="Clear drawing">
+    ✦ Click &amp; drag to draw · click here to clear
+  </button>
+</section>
+
+<!-- ── WORK ── -->
+<section class="work-sec" id="work" aria-labelledby="work-title">
+  <div class="sec-header">
+    <div>
+      <p class="sec-eye">Selected projects</p>
+      <h2 class="sec-title" id="work-title">Work</h2>
+    </div>
+    </div>
+  <div class="proj-grid">
+
+    <a class="proj-link" href="./projects/splitDecision.html">
+      <article class="proj-card" tabindex="0" aria-label="Split Decision project">
+        <div class="proj-thumb">
+          <img src="./images/portfolio/splitDecision/splitDecision.png" alt="Split Decision — Interactive group decision-making application"/>
+        </div>
+        <div class="proj-body">
+          <p class="proj-number">01</p>
+          <h3 class="proj-title">Split Decision</h3>
+          <p class="proj-desc">An interactive group decision-making web application designed to facilitate collaborative problem-solving.</p>
+          <div class="proj-tags">
+            <span class="tag tag-b">HTML/CSS</span>
+            <span class="tag tag-b">CSS</span>
+            <span class="tag tag-b">JavaScript</span>
+            <span class="tag tag-c">Python</span>
+          </div>
+          <div class="proj-arrow">
+            View project
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <a>
+      <article class="proj-card" tabindex="0" aria-label="Project 2">
+        <div class="proj-thumb">
+          <img src="./images/portfolio/speeky/Speeky.png" alt="Project 2"/>
+        </div>
+        <div class="proj-body">
+          <p class="proj-number">02</p>
+          <h3 class="proj-title">Speeky</h3>
+          <p class="proj-desc">High-fidelity Figma prototype for a mobile app that helps users improve public speaking skills.</p>
+          <div class="proj-tags">
+            <span class="tag tag-b">Figma</span>
+          </div>
+          <div class="proj-arrow">
+            View project
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <a>
+      <article class="proj-card" tabindex="0" aria-label="Project 3">
+        <div class="proj-thumb">
+          <img src="./images/portfolio/animalShelterMap/Picture1.png" alt="Project 3"/>
+        </div>
+        <div class="proj-body">
+          <p class="proj-number">03</p>
+          <h3 class="proj-title">Animal Shelter Map</h3>
+          <p class="proj-desc">Interactive map showcasing local animal shelters and their available pets.</p>
+          <div class="proj-tags">
+            <span class="tag tag-b">MERN</span>
+            <span class="tag tag-b">REACT</span>
+            <span class="tag tag-b">MongoDB</span>
+          </div>
+          <div class="proj-arrow">
+            View project
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+          </div>
+        </div>
+      </article>
+      </a>
+
+      <a>
+       <article class="proj-card" tabindex="0" aria-label="Project 4">
+        <div class="proj-thumb">
+          <img src="./images/portfolio/musicPlayer/F526602C-5975-424F-AE4E-EF08CDE82F21.png" alt="Project 4"/>
+        </div>
+        <div class="proj-body">
+          <p class="proj-number">04</p>
+          <h3 class="proj-title">Music Player</h3>
+          <p class="proj-desc">A responsive music player web application with playlist management.</p>
+          <div class="proj-tags">
+            <span class="tag tag-b">HTML</span>
+            <span class="tag tag-b">CSS</span>
+            <span class="tag tag-b">JavaScript</span>
+          </div>
+          <div class="proj-arrow">
+            View project
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+          </div>
+        </div>
+      </article>
+      </a>
+
+      <a>
+      <article class="proj-card" tabindex="0" aria-label="Project 5">
+        <div class="proj-thumb">
+          <img src="./images/portfolio/grumpyChef/grumpyChef.png" alt="Project 5"/>
+        </div>
+        <div class="proj-body">
+          <p class="proj-number">05</p>
+          <h3 class="proj-title">Grumpy Chef</h3>
+          <p class="proj-desc">A web application for sharing and discovering recipes generated by AI depending on ingredients input.</p>
+          <div class="proj-tags">
+            <span class="tag tag-b">Python</span>
+            <span class="tag tag-b">RAG</span>
+            <span class="tag tag-b">HTML</span>
+            <span class="tag tag-b">JavaScript</span>
+            <span class="tag tag-b">CSS</span>
+            <span class="tag tag-b">DALL-E</span>
+            <span class="tag tag-b">GPT-4o</span>
+          </div>
+          <div class="proj-arrow">
+            View project
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+          </div>
+        </div>
+      </article>
+      </a>
+
+  </div>
+</section>
+
+
+<section class="contact-sec" id="contact" aria-labelledby="contact-title">
+  <div class="contact-left">
+    <h2 id="contact-title">Get in touch</h2>
+    <p>Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+     <div class="social-links">
+      <a class="social-link" href="mailto:cathy-098@hotmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"/>
+          <polyline points="2,5 12,13 22,5"/>
+        </svg>
+        Email
+      </a>
+   
+      <a class="social-link" href="https://www.linkedin.com/in/cathy-tham-43312434a" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a class="social-link" href="https://github.com/cathytham" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a class="social-link" href="./cv/cathyTham_CV.pdf" target="_blank">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M8 8h8M8 16h5"/></svg>
+        Read.cv
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="footer-name">Cathy Tham</span>
+  <div class="footer-links">
+    <a class="footer-link" href="#work">Work</a>
+    <a class="footer-link" href="side-work.html">Side Work</a>
+    <a class="footer-link" href="about.html">About</a>
+    <a class="footer-link" href="#contact">Contact</a>
+  </div>
+  <span class="footer-copy">© 2026</span>
+</footer>
+
+<script src="script.js"></script>
+<script src="menu-overlay.js"></script>
+</body>
+</html>

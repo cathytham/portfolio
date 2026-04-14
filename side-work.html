@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cathy Tham — Side Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles/menu-overlay.css"/>
+<link rel="stylesheet" href="styles/base.css"/>
+<link rel="stylesheet" href="styles/side-work.css"/>
+</head>
+<body>
+
+<!-- Star cursor -->
+<div class="cursor" id="cursor">
+  <svg viewBox="0 0 24 24">
+    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+  </svg>
+</div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ── NAV ── -->
+<nav aria-label="Site navigation">
+  <a class="nav-logo" href="main.html">Cathy Tham</a>
+  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-overlay">
+    Menu
+    <svg viewBox="0 0 24 24"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Side Work">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-eye">Extra projects &amp; experiments</span>
+    <span class="hero-display">Side Work</span>
+    <p class="hero-sub">Personal explorations in 3D, creative coding, and video editing.</p>
+  </div>
+</section>
+
+<!-- ── SIDE WORK GRID ── -->
+<section class="work-sec" id="side-work" aria-labelledby="side-work-title">
+  <div class="sec-header">
+    <div>
+      <p class="sec-eye">All projects</p>
+      <h2 class="sec-title" id="side-work-title">Side Work</h2>
+    </div>
+    <span class="sec-count">2 projects</span>
+  </div>
+
+  <div class="proj-grid">
+
+    <!-- Card 1 -->
+    <a class="proj-link" href="projects/clawMachine.html">
+      <article class="proj-card" tabindex="0" aria-label="Claw Machine project">
+        <div class="proj-thumb">
+          <img src="./images/Portfolio/clawMachine/view2.png" alt="Claw Machine — 3D interactive simulation"/>
+        </div>
+        <div class="proj-body">
+          <p class="proj-number">01</p>
+          <h3 class="proj-title">Claw Machine</h3>
+          <p class="proj-desc">A 3D interactive claw machine simulation — pick up toys and explore a tactile, playful environment built entirely in code.</p>
+          <div class="proj-tags">
+            <span class="tag tag-b">Experiment</span>
+            <span class="tag tag-b">3D</span>
+            <span class="tag tag-c">2025</span>
+          </div>
+          <div class="proj-arrow">
+            View project
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+          </div>
+        </div>
+      </article>
+    </a>
+
+    <!-- Card 2 -->
+    <a class="proj-link" href="">
+      <article class="proj-card" tabindex="0" aria-label="Bunny project">
+        <div class="proj-thumb">
+          <img src="images/Portfolio/unrealBunny/2C0A4799-BD0B-439E-A759-C8B3B187F7C1.jpeg" alt="Bunny — Blender and Unreal Engine simulation"/>
+        </div>
+        <div class="proj-body">
+          <p class="proj-number">02</p>
+          <h3 class="proj-title">Bunny</h3>
+          <p class="proj-desc">A 3D interactive bunny simulation built with Blender and Unreal Engine — soft body dynamics, fur shading, and real-time interaction.</p>
+          <div class="proj-tags">
+            <span class="tag tag-b">Experiment</span>
+            <span class="tag tag-b">Unreal Engine</span>
+            <span class="tag tag-c">2024</span>
+          </div>
+          <div class="proj-arrow">
+            View project
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+          </div>
+        </div>
+      </article>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="footer-name">Cathy Tham</span>
+  <div class="footer-links">
+    <a class="footer-link" href="main.html#work">Work</a>
+    <a class="footer-link" href="side-work.html">Side Work</a>
+    <a class="footer-link" href="about.html">About</a>
+    <a class="footer-link" href="main.html#contact">Contact</a>
+  </div>
+  <span class="footer-copy">© 2026</span>
+</footer>
+
+<script src="script.js"></script>
+<script src="menu-overlay.js"></script>
+</body>
+</html>
