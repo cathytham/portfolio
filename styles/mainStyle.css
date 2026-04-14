@@ -176,7 +176,7 @@ nav{
   width:clamp(180px,24vw,360px);
   height:clamp(220px,34vh,380px);
   z-index:3;
-  opacity:0;animation:fadeUp 1s ease .6s forwards;
+  opacity:0;
   display:flex;align-items:center;justify-content:center;
   background-image:url('../images/bunny.PNG');
   background-repeat:no-repeat;
@@ -187,6 +187,24 @@ nav{
   pointer-events:none;
 }
 
+/* After */
+@keyframes bunnyReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 0.85;
+    transform: translateY(0px);
+  }
+}
+
+.bunny-zone {
+  opacity: 0;
+  animation:
+    bunnyReveal .9s cubic-bezier(.16, 1, .3, 1) .7s forwards,
+    floatSoft 6s ease-in-out 1.6s infinite;
+}
 
 @keyframes floatSoft{
   0%   { transform: translateY(0px); }

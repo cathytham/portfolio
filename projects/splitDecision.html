@@ -80,7 +80,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .slideshow{position:relative;border-radius:20px;overflow:hidden;background:var(--b100);aspect-ratio:16/9;box-shadow:0 24px 64px rgba(30,82,134,.10);}
 .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .5s ease;pointer-events:none;}
 .slide.active{opacity:1;pointer-events:auto;}
-.slide-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(145deg,rgba(98,160,212,.14),rgba(184,213,238,.28));}
+.slide-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(98,160,212,.14),rgba(184,213,238,.28));}
 .slide-placeholder svg{width:44px;height:44px;stroke:var(--b300);fill:none;stroke-width:1;stroke-linecap:round;opacity:.7;}
 .slide-placeholder p{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--b400);text-align:center;line-height:1.7;}
 .slide-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:46px;height:46px;border-radius:50%;background:rgba(254,254,252,.88);border:1px solid var(--b200);display:flex;align-items:center;justify-content:center;cursor:none;transition:background .15s,border-color .15s,transform .2s;backdrop-filter:blur(6px);}
@@ -257,31 +257,48 @@ footer{padding:28px 40px;display:flex;justify-content:space-between;align-items:
 
 <main class="proj-content">
 
-  <div class="slideshow-wrap">
+  <div>
     <div class="slideshow" id="slideshow" role="region" aria-label="Project screenshots">
 
       <div class="slide active" data-caption="Home dashboard — team overview and quick actions">
         <div class="slide-placeholder">
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-           <img src="../images/Portfolio/splitDecision/splitDecision.png" style="width:100%;height:100%;object-fit:cover;" alt="Home dashboard screenshot"/>
+           <img src="../images/Portfolio/splitDecision/splitDecision.png" style="height:100%;object-fit:cover;" alt="Home dashboard screenshot"/>
         </div>
       </div>
 
-      <div class="slide" data-caption="Horse Racing — interactive game for random selection and team splitting">
+      <div class="slide" data-caption="Horse Racing — interactive game for random selection">
         <div class="slide-placeholder">
           <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <img src="../images/Portfolio/splitDecision/horseRacing.png" style="width:100%;height:100%;object-fit:cover;" alt="Horse Racing screenshot"/>
-        </div>
+          <video controls autoplay="true" style="height:100%;object-fit:cover;">
+            <source src="../images/Portfolio/splitDecision/06 - horseRacing.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>  
+          </div>
       </div>
 
       <div class="slide" data-caption="Availability Calendar — drag-to-select with consolidated overlap shading">
         <div class="slide-placeholder">
           <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <img src="../images/Portfolio/splitDecision/EB9911D9-0E3C-4331-BD34-666E156D50B7.jpeg" style="width:100%;height:100%;object-fit:cover;" alt="Availability Calendar screenshot"/>
+          <!-- <img src="../images/Portfolio/splitDecision/EB9911D9-0E3C-4331-BD34-666E156D50B7.jpeg" style="height:100%;object-fit:cover;" alt="Availability Calendar screenshot"/> -->
+          <video controls autoplay="true" style="height:100%;object-fit:cover;">
+            <source src="../images/Portfolio/splitDecision/38 - calendar.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>  
         </div>
       </div>
 
-      <button class="slide-btn slide-prev" id="slide-prev" aria-label="Previous slide">
+      <div class="slide" data-caption="Polls — real-time updates and results for all participants">
+        <div class="slide-placeholder">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <video controls autoplay="true" style="height:100%;object-fit:cover;">
+            <source src="../images/Portfolio/splitDecision/07 - poll.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>  
+        </div>
+      </div>
+
+      <button class="slide-btn slide-prev" id="slide-prev" aria-label="Previous slide">s
         <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
       </button>
       <button class="slide-btn slide-next" id="slide-next" aria-label="Next slide">
