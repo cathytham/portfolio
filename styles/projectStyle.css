@@ -61,7 +61,6 @@
 
    .proj-hero {
        position: relative;
-       min-height: 76vh;
        display: flex;
        align-items: flex-end;
        padding: 130px 300px 100px;
