@@ -1,38 +1,55 @@
 /* ── CUSTOM CURSOR ── */
-.cursor{
-  position:fixed;width:18px;height:18px;pointer-events:none;
-  z-index:9999;transform:translate(-50%,-50%);
-  transition:transform .15s ease,opacity .2s ease;
-}
-.cursor svg{width:18px;height:18px;fill:var(--b800);}
-.cursor.big svg{width:28px;height:28px;}
-.cursor.big{width:28px;height:28px;}
-.cursor-ring{
-  position:fixed;width:40px;height:40px;
-  border:1.5px solid var(--b400);border-radius:50%;
-  pointer-events:none;z-index:9998;
-  transform:translate(-50%,-50%);
-  transition:width .2s,height .2s,border-color .2s;
+.cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform .15s ease, opacity .2s ease;
 }
 
-/* ── BACKGROUND SPARKLES ── */
-.sparkles-container{
-  position:fixed;inset:0;pointer-events:none;z-index:1;
+.cursor svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--b800);
 }
-.bg-sparkle{
-  position:absolute;width:32px;height:32px;pointer-events:none;
-  background-image:url('images/star.PNG');
-  background-size:contain;background-repeat:no-repeat;
-  background-position:center;opacity:0.3;
-  transition:transform .3s ease,opacity .3s ease;
+
+.cursor.big svg {
+  width: 28px;
+  height: 28px;
 }
-.bg-sparkle.sparkle-animate{
-  transform:translateY(-20px) scale(1.5);
-  opacity:0;
+
+.cursor.big {
+  width: 28px;
+  height: 28px;
 }
-.sparkle{
-  position:fixed;width:8px;height:8px;pointer-events:none;
-  z-index:9997;
-  background:#62A0D4;clip-path:polygon(50% 0%,100% 38%,82% 100%,50% 75%,18% 100%,0% 38%);
-  animation:sparkle .6s ease-out forwards;
+
+.cursor-ring {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--b400);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, border-color .2s;
+}
+
+
+.bg-sparkle.sparkle-animate {
+  transform: translateY(-20px) scale(1.5);
+  opacity: 0;
+}
+
+.sparkle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  z-index: 9997;
+  background: #62A0D4;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
+  animation: sparkle .6s ease-out forwards;
 }

@@ -56,6 +56,7 @@ document.addEventListener('mousedown', e => {
 
 function injectStarOverlayStyles() {
   if (document.getElementById('star-overlay-styles')) return;
+  const basePath = window.location.pathname.includes('/projects/') ? '../' : '';
   const style = document.createElement('style');
   style.id = 'star-overlay-styles';
   style.textContent = `
@@ -64,7 +65,7 @@ function injectStarOverlayStyles() {
     }
     .star-overlay .star-burst {
       position:absolute;width:20px;height:20px;
-      background-image:url('images/star.png');
+      background-image:url('${basePath}images/star.png');
       background-size:contain;background-repeat:no-repeat;
       opacity:0;transform:translate(-50%,-50%) scale(1);
       animation:starBurst 0.9s ease-out forwards;
@@ -110,7 +111,15 @@ function attachNavigationStarEffect() {
       createStarBounceOverlay();
       if (href.startsWith('#')) {
         e.preventDefault();
-        setTimeout(() => { location.hash = href; }, 420);
+        setTimeout(() => {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, null, href);
+          } else {
+            location.hash = href;
+          }
+        }, 420);
       } else {
         e.preventDefault();
         setTimeout(() => { window.location.href = href; }, 420);
