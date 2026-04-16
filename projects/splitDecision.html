@@ -50,13 +50,16 @@
           </svg>
           Back to work
         </a>
-        <p class="proj-overline">Selected project — 01</p>
+        <p class="proj-overline">Selected project - 01</p>
         <h1 class="proj-hero-title">Split<br>Decision</h1>
       </div>
       <div class="proj-hero-meta">
         <div class="meta-pill"><em>Timeline</em><strong>Oct – Dec 2025</strong></div>
         <div class="meta-pill"><em>Type</em><strong>Web App</strong></div>
         <div class="meta-pill"><em>Stack</em><strong>Flask · JS · MongoDB</strong></div>
+        <a href="https://calendar-availability.onrender.com/" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:12px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:.04em; color:var(--b800); text-decoration:none; transition:opacity .2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">
+          Live Website -&gt;
+        </a>
       </div>
     </div>
   </section>
@@ -260,36 +263,18 @@
         </svg>
         All projects
       </a>
+      <a href="https://calendar-availability.onrender.com/" target="_blank" rel="noopener noreferrer" style="display:inline-block; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:.04em; color:var(--b800); text-decoration:none; transition:opacity .2s;" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">
+        Live Website -&gt;
+      </a>
     </div>
 
   </main>
 
   <!-- ── FOOTER ── -->
-  <footer>
-    <span class="footer-name">Cathy Tham</span>
-    <div class="footer-links">
-      <a class="footer-link" href="../main.html#work">Work</a>
-      <a class="footer-link" href="../side-work.html">Side Work</a>
-      <a class="footer-link" href="../about.html">About</a>
-      <a class="footer-link" href="../main.html#contact">Contact</a>
-    </div>
-    <span class="footer-copy">© 2026</span>
-  </footer>
+  <div id="global-footer"></div>
 
   <script>
-    /* ── CURSOR ── */
-    const cursor = document.getElementById('cursor'), ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
-    (function loop() { rx += (mx - rx) * .12; ry += (my - ry) * .12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(loop); })();
-    document.querySelectorAll('a,button').forEach(el => {
-      el.addEventListener('mouseenter', () => { cursor.classList.add('big'); ring.style.width = '56px'; ring.style.height = '56px'; ring.style.borderColor = 'var(--b600)'; });
-      el.addEventListener('mouseleave', () => { cursor.classList.remove('big'); ring.style.width = '40px'; ring.style.height = '40px'; ring.style.borderColor = 'var(--b400)'; });
-    });
-
-
-
-    /* ── SLIDESHOW ── */
+        /* ── SLIDESHOW ── */
     (function () {
       const ss = document.getElementById('slideshow');
       const slides = Array.from(ss.querySelectorAll('.slide'));
@@ -303,23 +288,42 @@
 
       if (total <= 1) { prevBtn.style.display = 'none'; nextBtn.style.display = 'none'; counter.style.display = 'none'; dotsWrap.style.display = 'none'; return; }
 
-      slides.forEach((_, i) => {
+      slides.forEach((slide, i) => {
         const d = document.createElement('button');
         d.className = 'slide-dot' + (i === 0 ? ' active' : '');
         d.setAttribute('aria-label', 'Slide ' + (i + 1));
         d.addEventListener('click', () => go(i));
         dotsWrap.appendChild(d);
+
+        const vid = slide.querySelector('video');
+        if (vid) {
+          vid.removeAttribute('autoplay');
+          if (i !== cur) {
+            vid.pause();
+            vid.currentTime = 0;
+          } else {
+            vid.play().catch(()=>{});
+          }
+        }
       });
 
       function go(idx) {
+        const oldVid = slides[cur].querySelector('video');
+        if (oldVid) oldVid.pause();
+
         slides[cur].classList.remove('active');
         dotsWrap.children[cur].classList.remove('active');
         cur = (idx + total) % total;
         slides[cur].classList.add('active');
         dotsWrap.children[cur].classList.add('active');
         counter.textContent = (cur + 1) + ' / ' + total;
-        caption.textContent = slides[cur].dataset.caption || '';
-        reset();
+        if (caption) caption.textContent = slides[cur].dataset.caption || '';
+        
+        const newVid = slides[cur].querySelector('video');
+        if (newVid) {
+          newVid.currentTime = 0;
+          newVid.play().catch(()=>{});
+        }
       }
 
       prevBtn.addEventListener('click', () => go(cur - 1));
@@ -330,10 +334,7 @@
       ss.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
       ss.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) go(dx < 0 ? cur + 1 : cur - 1); });
 
-      function reset() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 5000); }
-      reset();
-      ss.addEventListener('mouseenter', () => clearInterval(timer));
-      ss.addEventListener('mouseleave', reset);
+
     })();
   </script>
 

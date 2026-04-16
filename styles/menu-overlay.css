@@ -18,10 +18,11 @@
 .menu-overlay::before{
   content:'';
   position:absolute;
-  width:520px;height:520px;
+  width: clamp(650px, 75vw, 1100px);
+  height: clamp(650px, 75vw, 1100px);
   border-radius:60% 40% 55% 45% / 45% 55% 40% 60%;
-  background:rgba(184,213,238,.3);
-  right:-60px;top:50%;transform:translateY(-50%);
+  background:rgba(184,213,238,.35);
+  right: -10vw;top:50%;transform:translateY(-50%);
   pointer-events:none;
   animation:menuBlob 10s ease-in-out infinite;
 }
@@ -107,7 +108,12 @@
 /* Responsive */
 @media(max-width:900px){
   .menu-overlay{ padding:32px 28px; }
+  .menu-overlay::before { right: -25vw; }
 }
 @media(max-width:600px){
   .menu-overlay{ padding:20px 16px; }
+  .menu-overlay::before { 
+    width: 140vw; height: 140vw; 
+    right: -45vw; top: 45%; 
+  }
 }

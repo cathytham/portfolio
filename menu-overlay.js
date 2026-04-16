@@ -42,9 +42,15 @@ async function initMenuOverlay() {
             link.addEventListener('click', closeMenu);
         });
 
+        if (typeof attachNavigationStarEffect === 'function') {
+            attachNavigationStarEffect(menuOverlay);
+        }
+        if (typeof bindCursorHoverStates === 'function') {
+            bindCursorHoverStates(menuOverlay);
+        }
+
         function closeMenu() {
             // Add a slight delay to allow native click actions (navigation) to complete
-            // before `pointer-events: none` takes effect.
             setTimeout(() => {
                 menuOverlay.classList.remove('open');
                 menuBtn.setAttribute('aria-expanded', 'false');

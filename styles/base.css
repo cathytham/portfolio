@@ -41,6 +41,11 @@ body {
   cursor: none;
 }
 
+/* Hide default cursor globally on interactive elements so custom cursor shows */
+a, button, input, textarea, select, [role="button"], iframe {
+  cursor: none !important;
+}
+
 /* custome cursor image...
 .cursor{
   position:fixed;width:18px;height:18px;pointer-events:none;
@@ -251,7 +256,7 @@ footer {
   background: var(--b800);
   border: none;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: none;
   display: flex;
   flex-direction: column;
   justify-content: center;

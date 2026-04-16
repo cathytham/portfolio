@@ -51,7 +51,7 @@
                     </svg>
                     Back to work
                 </a>
-                <p class="proj-overline">Selected project — 03</p>
+                <p class="proj-overline">Selected project - 03</p>
                 <h1 class="proj-hero-title">Grumpy<br>Chef</h1>
             </div>
             <div class="proj-hero-meta">
@@ -259,30 +259,9 @@
     </main>
 
     <!-- ── FOOTER ── -->
-    <footer>
-        <span class="footer-name">Cathy Tham</span>
-        <div class="footer-links">
-            <a class="footer-link" href="../main.html#work">Work</a>
-            <a class="footer-link" href="../side-work.html">Side Work</a>
-            <a class="footer-link" href="../about.html">About</a>
-            <a class="footer-link" href="../main.html#contact">Contact</a>
-        </div>
-        <span class="footer-copy">© 2026</span>
-    </footer>
+    <div id="global-footer"></div>
 
     <script>
-        /* ── CURSOR ── */
-        const cursor = document.getElementById('cursor'), ring = document.getElementById('cursor-ring');
-        let mx = 0, my = 0, rx = 0, ry = 0;
-        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
-        (function loop() { rx += (mx - rx) * .12; ry += (my - ry) * .12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(loop); })();
-        document.querySelectorAll('a,button').forEach(el => {
-            el.addEventListener('mouseenter', () => { cursor.classList.add('big'); ring.style.width = '56px'; ring.style.height = '56px'; ring.style.borderColor = 'var(--b600)'; });
-            el.addEventListener('mouseleave', () => { cursor.classList.remove('big'); ring.style.width = '40px'; ring.style.height = '40px'; ring.style.borderColor = 'var(--b400)'; });
-        });
-
-
-
         /* ── SLIDESHOW ── */
         (function () {
             const ss = document.getElementById('slideshow');
@@ -297,23 +276,42 @@
 
             if (total <= 1) { prevBtn.style.display = 'none'; nextBtn.style.display = 'none'; counter.style.display = 'none'; dotsWrap.style.display = 'none'; return; }
 
-            slides.forEach((_, i) => {
+            slides.forEach((slide, i) => {
                 const d = document.createElement('button');
                 d.className = 'slide-dot' + (i === 0 ? ' active' : '');
                 d.setAttribute('aria-label', 'Slide ' + (i + 1));
                 d.addEventListener('click', () => go(i));
                 dotsWrap.appendChild(d);
+
+                const vid = slide.querySelector('video');
+                if (vid) {
+                    vid.removeAttribute('autoplay');
+                    if (i !== cur) {
+                        vid.pause();
+                        vid.currentTime = 0;
+                    } else {
+                        vid.play().catch(()=>{});
+                    }
+                }
             });
 
             function go(idx) {
+                const oldVid = slides[cur].querySelector('video');
+                if (oldVid) oldVid.pause();
+
                 slides[cur].classList.remove('active');
                 dotsWrap.children[cur].classList.remove('active');
                 cur = (idx + total) % total;
                 slides[cur].classList.add('active');
                 dotsWrap.children[cur].classList.add('active');
                 counter.textContent = (cur + 1) + ' / ' + total;
-                caption.textContent = slides[cur].dataset.caption || '';
-                reset();
+                if (caption) caption.textContent = slides[cur].dataset.caption || '';
+                
+                const newVid = slides[cur].querySelector('video');
+                if (newVid) {
+                    newVid.currentTime = 0;
+                    newVid.play().catch(()=>{});
+                }
             }
 
             prevBtn.addEventListener('click', () => go(cur - 1));
@@ -324,10 +322,7 @@
             ss.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
             ss.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) go(dx < 0 ? cur + 1 : cur - 1); });
 
-            function reset() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 5000); }
-            reset();
-            ss.addEventListener('mouseenter', () => clearInterval(timer));
-            ss.addEventListener('mouseleave', reset);
+
         })();
     </script>
 

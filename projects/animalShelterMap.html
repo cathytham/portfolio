@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cathy Tham - Animal Shelter Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/menu-overlay.css" />
+    <link rel="stylesheet" href="../styles/projectStyle.css" />
+</head>
+
+<body>
+
+    <!-- Background sparkles container -->
+    <div class="sparkles-container" id="sparkles-container" aria-hidden="true"></div>
+
+
+    <div class="cursor" id="cursor">
+        <svg viewBox="0 0 24 24">
+            <polygon
+                points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+        </svg>
+    </div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+
+
+    <nav aria-label="Site navigation">
+        <a class="nav-logo" href="../main.html">Cathy Tham</a>
+        <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-overlay">
+            Menu
+            <svg viewBox="0 0 24 24">
+                <line x1="3" y1="8" x2="21" y2="8" />
+                <line x1="3" y1="16" x2="21" y2="16" />
+            </svg>
+        </button>
+    </nav>
+
+    <section class="proj-hero" aria-label="Project hero">
+        <div class="proj-hero-inner">
+            <div>
+                <a class="proj-back" href="../main.html#work">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="15,18 9,12 15,6" />
+                    </svg>
+                    Back to work
+                </a>
+                <p class="proj-overline">Selected project - 04</p>
+                <h1 class="proj-hero-title">Animal<br>Shelter Map</h1>
+            </div>
+            <div class="proj-hero-meta">
+                <div class="meta-pill"><em>Timeline</em><strong>Nov 2023</strong></div>
+                <div class="meta-pill"><em>Type</em><strong>Web App</strong></div>
+                <div class="meta-pill"><em>Stack</em><strong>React JS · Express · Node.js · Heroku · MongoDb</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="proj-content">
+
+        <div>
+            <div class="slideshow" id="slideshow" role="region" aria-label="Project screenshots">
+
+                <div class="slide active" data-caption="Shelter Details">
+                    <div class="slide-placeholder">
+                        <img src="../images/Portfolio/animalShelterMap/animalShelter.png"
+                            style="width:100%;height:100%;object-fit:contain;" alt="Shelter Details" />
+                    </div>
+                </div>
+
+                <div class="slide" data-caption="Animal shelter map">
+                    <div class="slide-placeholder">
+                        <video controls muted playsinline style="width:100%;height:100%;object-fit:contain;">
+                            <source src="../images/Portfolio/animalShelterMap/70 - FullSizeRender.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <button class="slide-btn slide-prev" id="slide-prev" aria-label="Previous slide">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="15,18 9,12 15,6" />
+                    </svg>
+                </button>
+                <button class="slide-btn slide-next" id="slide-next" aria-label="Next slide">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9,6 15,12 9,18" />
+                    </svg>
+                </button>
+                <span class="slide-counter" id="slide-counter">1 / 5</span>
+            </div>
+            <div class="slide-dots" id="slide-dots"></div>
+        </div>
+
+
+        <!-- ══ 01 THESIS ══ -->
+        <section aria-labelledby="thesis-h">
+            <div class="sec-label" data-num="01">Thesis</div>
+            <div class="intro-grid">
+                <div>
+                    <blockquote class="thesis-quote" id="thesis-h">
+                        Finding animal shelters should be simple — this project transforms complex data into an
+                        accessible, interactive map experience.
+                    </blockquote>
+                    <p class="intro-body">
+                        This project is a full-stack MERN application designed to visualize a large dataset of
+                        animal
+                        shelters across North America.
+                        By integrating Mapbox Leaflet with an external API, the platform allows users to explore
+                        locations through an intuitive,
+                        map-based interface.
+
+                        Users can navigate freely, search by region, and interact with map points to access key
+                        information such as shelter name,
+                        address, phone number, and email. The project emphasizes usability and clarity, turning raw
+                        data
+                        into a tool that supports
+                        discovery and accessibility.
+
+                        Developed through pair programming, the workflow encouraged collaboration and continuous
+                        feedback, strengthening both
+                        technical implementation and problem-solving approaches.
+                    </p>
+                </div>
+
+                <div class="role-card">
+                    <p class="role-card-label">My exact contribution</p>
+                    <div class="role-list">
+                        <div class="role-item">Built front-end components using React for map interaction and UI.
+                        </div>
+                        <div class="role-item">Integrated Leaflet API to display and interact with shelter
+                            locations.
+                        </div>
+                        <div class="role-item">Developed backend routes with Express and Node.js to fetch and manage
+                            shelter data.</div>
+                        <div class="role-item">Collaborated through pair programming (driver/observer roles) to
+                            implement features and debug efficiently.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ 02 IDEATION ══ -->
+        <section aria-labelledby="ideation-h">
+            <div class="sec-label" data-num="02">Ideation</div>
+            <h2 class="sec-heading" id="ideation-h">Design directions explored</h2>
+            <div class="idea-grid">
+
+                <div class="idea-card">
+                    <div class="idea-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                        </svg>
+                    </div>
+                    <h4>List-based directory</h4>
+                    <p>An early idea focused on displaying shelters in a traditional list view with filters. While
+                        informative, it made browsing locations feel disconnected from geography.</p>
+                </div>
+
+                <div class="idea-card chosen">
+                    <div class="idea-icon">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="20,6 9,17 4,12" />
+                        </svg>
+                    </div>
+                    <h4>Interactive map ✦</h4>
+                    <p>The chosen direction centers on a map-based interface using Leaflet. Users can explore
+                        shelters
+                        spatially, click markers, and access detailed information in context.</p>
+                </div>
+
+            </div>
+        </section>
+        <!-- ══ 03 APPROACH ══ -->
+        <section aria-labelledby="approach-h">
+            <div class="sec-label" data-num="03">Approach</div>
+            <h2 class="sec-heading" id="approach-h">How it was built — step by step</h2>
+            <div class="timeline">
+
+                <div class="t-step">
+                    <span class="t-num" aria-hidden="true">01</span>
+                    <div class="t-body">
+                        <h4>Research & dataset exploration</h4>
+                        <p>Explored available APIs and datasets for animal shelters across North America. Defined
+                            the
+                            core data structure including location, contact information, and accessibility.</p>
+                        <span class="t-tag">Research</span>
+                    </div>
+                </div>
+
+                <div class="t-step">
+                    <span class="t-num" aria-hidden="true">02</span>
+                    <div class="t-body">
+                        <h4>System architecture</h4>
+                        <p>Built a full-stack MERN application. Express and Node.js handled API requests, while
+                            MongoDB
+                            stored and structured shelter data for efficient retrieval.</p>
+                        <span class="t-tag">Architecture</span>
+                    </div>
+                </div>
+
+                <div class="t-step">
+                    <span class="t-num" aria-hidden="true">03</span>
+                    <div class="t-body">
+                        <h4>Map integration & frontend</h4>
+                        <p>Implemented an interactive map using Leaflet in React. Added dynamic markers, click
+                            interactions, and popups displaying shelter details such as name, address, and contact
+                            info.
+                        </p>
+                        <span class="t-tag">Development</span>
+                    </div>
+                </div>
+
+                <div class="t-step">
+                    <span class="t-num" aria-hidden="true">04</span>
+                    <div class="t-body">
+                        <h4>Testing & pair programming</h4>
+                        <p>Worked in a pair programming setup, alternating between driver and observer roles.
+                            Iteratively tested map interactions, API responses, and UI responsiveness.</p>
+                        <span class="t-tag">Testing</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── CTA BAR ── -->
+        <div class="cta-bar">
+            <a class="btn-out" href="../main.html#work">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="15,18 9,12 15,6" />
+                </svg>
+                All projects
+            </a>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <div id="global-footer"></div>
+
+    <script>
+        /* ── SLIDESHOW ── */
+        (function () {
+            const ss = document.getElementById('slideshow');
+            const slides = Array.from(ss.querySelectorAll('.slide'));
+            const prevBtn = document.getElementById('slide-prev');
+            const nextBtn = document.getElementById('slide-next');
+            const counter = document.getElementById('slide-counter');
+            const dotsWrap = document.getElementById('slide-dots');
+            const caption = document.getElementById('slide-caption');
+            const total = slides.length;
+            let cur = 0, timer;
+
+            if (total <= 1) { prevBtn.style.display = 'none'; nextBtn.style.display = 'none'; counter.style.display = 'none'; dotsWrap.style.display = 'none'; return; }
+
+            slides.forEach((slide, i) => {
+                const d = document.createElement('button');
+                d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+                d.setAttribute('aria-label', 'Slide ' + (i + 1));
+                d.addEventListener('click', () => go(i));
+                dotsWrap.appendChild(d);
+
+                const vid = slide.querySelector('video');
+                if (vid) {
+                    if (i !== cur) {
+                        vid.pause();
+                        vid.currentTime = 0;
+                    } else {
+                        vid.play().catch(() => { });
+                    }
+                }
+            });
+
+            function go(idx) {
+                const oldVid = slides[cur].querySelector('video');
+                if (oldVid) oldVid.pause();
+
+                slides[cur].classList.remove('active');
+                dotsWrap.children[cur].classList.remove('active');
+                cur = (idx + total) % total;
+                slides[cur].classList.add('active');
+                dotsWrap.children[cur].classList.add('active');
+                counter.textContent = (cur + 1) + ' / ' + total;
+                if (caption) caption.textContent = slides[cur].dataset.caption || '';
+
+                const newVid = slides[cur].querySelector('video');
+                if (newVid) {
+                    newVid.currentTime = 0;
+                    newVid.play().catch(() => { });
+                }
+            }
+
+            prevBtn.addEventListener('click', () => go(cur - 1));
+            nextBtn.addEventListener('click', () => go(cur + 1));
+            document.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') go(cur - 1); if (e.key === 'ArrowRight') go(cur + 1); });
+
+            let sx = 0;
+            ss.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+            ss.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) go(dx < 0 ? cur + 1 : cur - 1); });
+
+
+        })();
+    </script>
+
+    <script src="../script.js"></script>
+    <script src="../menu-overlay.js"></script>
+</body>
+
+</html>

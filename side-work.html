@@ -17,6 +17,9 @@
 
 <body>
 
+  <!-- Background sparkles container -->
+  <div class="sparkles-container" id="sparkles-container" aria-hidden="true"></div>
+
   <!-- Star cursor -->
   <div class="cursor" id="cursor">
     <svg viewBox="0 0 24 24">
@@ -42,7 +45,7 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <span class="hero-eye">Extra projects &amp; experiments</span>
-      <span class="hero-display">Side Work</span>
+      <h1 class="hero-title-contact">Side Work</h1>
       <p class="hero-sub">Personal explorations in 3D, creative coding, and video editing.</p>
     </div>
   </section>
@@ -52,7 +55,6 @@
     <div class="sec-header">
       <div>
         <p class="sec-eye">All projects</p>
-        <h2 class="sec-title" id="side-work-title">Side Work</h2>
       </div>
       <span class="sec-count">2 projects</span>
     </div>
@@ -60,13 +62,42 @@
     <div class="proj-grid">
 
       <!-- Card 1 -->
+      <a class="proj-link" href="projects/strudelPerformance.html">
+        <article class="proj-card" tabindex="0" aria-label="Split Decision project">
+          <div class="proj-thumb">
+            <img src="./images/Portfolio/strudelPerformance/image00001.png"
+              alt="Split Decision — Interactive group decision-making application" />
+          </div>
+          <div class="proj-body">
+            <p class="proj-number">01</p>
+            <h3 class="proj-title">Strudel/Hydra Performance</h3>
+            <p class="proj-desc">A real-time audiovisual performance where code becomes both instrument and medium.
+            </p>
+            <div class="proj-tags">
+              <span class="tag tag-b">Strudel</span>
+              <span class="tag tag-b">Hydra</span>
+              <span class="tag tag-b">Live Coding</span>
+              <span class="tag tag-c">Performance</span>
+            </div>
+            <div class="proj-arrow">
+              View project
+              <svg viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="13,6 19,12 13,18" />
+              </svg>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Card 2 -->
       <a class="proj-link" href="projects/clawMachine.html">
         <article class="proj-card" tabindex="0" aria-label="Claw Machine project">
           <div class="proj-thumb">
             <img src="./images/Portfolio/clawMachine/view2.png" alt="Claw Machine — 3D interactive simulation" />
           </div>
           <div class="proj-body">
-            <p class="proj-number">01</p>
+            <p class="proj-number">02</p>
             <h3 class="proj-title">Claw Machine</h3>
             <p class="proj-desc">A 3D interactive claw machine simulation — pick up toys and explore a tactile, playful
               environment built entirely in code.</p>
@@ -86,7 +117,7 @@
         </article>
       </a>
 
-      <!-- Card 2 -->
+      <!-- Card 3 -->
       <a class="proj-link" href="projects/unrealBunny.html">
         <article class="proj-card" tabindex="0" aria-label="Bunny project">
           <div class="proj-thumb">
@@ -94,7 +125,7 @@
               alt="Bunny — Blender and Unreal Engine simulation" />
           </div>
           <div class="proj-body">
-            <p class="proj-number">02</p>
+            <p class="proj-number">03</p>
             <h3 class="proj-title">Bunny</h3>
             <p class="proj-desc">A 3D interactive bunny simulation built with Blender and Unreal Engine, soft body
               dynamics, fur shading, and real-time interaction.</p>
@@ -118,16 +149,7 @@
   </section>
 
   <!-- ── FOOTER ── -->
-  <footer>
-    <span class="footer-name">Cathy Tham</span>
-    <div class="footer-links">
-      <a class="footer-link" href="main.html#work">Work</a>
-      <a class="footer-link" href="side-work.html">Side Work</a>
-      <a class="footer-link" href="about.html">About</a>
-      <a class="footer-link" href="main.html#contact">Contact</a>
-    </div>
-    <span class="footer-copy">© 2026</span>
-  </footer>
+  <div id="global-footer"></div>
 
   <script src="script.js"></script>
   <script src="menu-overlay.js"></script>

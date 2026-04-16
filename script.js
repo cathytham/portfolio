@@ -1,19 +1,19 @@
 // ── STAR CURSOR ──────────────────────────────────────────────────────────────
 const cursor = document.getElementById('cursor');
-const ring   = document.getElementById('cursor-ring');
-let mx=0, my=0, rx=0, ry=0;
+const ring = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
 
 document.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
   cursor.style.left = mx + 'px';
-  cursor.style.top  = my + 'px';
+  cursor.style.top = my + 'px';
 });
 
 (function loop() {
   rx += (mx - rx) * .12;
   ry += (my - ry) * .12;
   ring.style.left = rx + 'px';
-  ring.style.top  = ry + 'px';
+  ring.style.top = ry + 'px';
   requestAnimationFrame(loop);
 })();
 
@@ -32,10 +32,10 @@ document.addEventListener('mousemove', e => {
 function createSparkle(x, y) {
   const sparkle = document.createElement('div');
   sparkle.className = 'sparkle';
-  const angle    = Math.random() * Math.PI * 2;
+  const angle = Math.random() * Math.PI * 2;
   const distance = Math.random() * 40 + 20;
   sparkle.style.left = x + 'px';
-  sparkle.style.top  = y + 'px';
+  sparkle.style.top = y + 'px';
   sparkle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
   sparkle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
   document.body.appendChild(sparkle);
@@ -56,7 +56,7 @@ document.addEventListener('mousedown', e => {
 
 function injectStarOverlayStyles() {
   if (document.getElementById('star-overlay-styles')) return;
-  const basePath = window.location.pathname.includes('/projects/') ? '../' : '';
+  const basePath = window.location.href.includes('/projects/') ? '../' : './';
   const style = document.createElement('style');
   style.id = 'star-overlay-styles';
   style.textContent = `
@@ -64,16 +64,16 @@ function injectStarOverlayStyles() {
       position:fixed;inset:0;pointer-events:none;z-index:999999;overflow:hidden;
     }
     .star-overlay .star-burst {
-      position:absolute;width:20px;height:20px;
+    position:absolute;width:30px;height:30px;
       background-image:url('${basePath}images/star.png');
       background-size:contain;background-repeat:no-repeat;
       opacity:0;transform:translate(-50%,-50%) scale(1);
       animation:starBurst 0.9s ease-out forwards;
     }
     @keyframes starBurst {
-      0% { opacity:1; transform:translate(-50%,-50%) scale(1); }
+      0% { opacity:1; transform:translate(-50%,-50%) scale(1.3); }
       60% { opacity:1; }
-      100% { opacity:0; transform:translate(calc(var(--dx) * 1px - 50%), calc(var(--dy) * 1px - 50%)) scale(0.4); }
+      100% { opacity:0; transform:translate(calc(var(--dx) * 1px - 50%), calc(var(--dy) * 1px - 50%)) scale(0.6); }
     }
   `;
   document.head.appendChild(style);
@@ -88,7 +88,7 @@ function createStarBounceOverlay() {
     const star = document.createElement('div');
     star.className = 'star-burst';
     const angle = Math.random() * Math.PI * 2;
-    const dist  = Math.random() * 120 + 50;
+    const dist = Math.random() * 120 + 50;
     const dx = Math.cos(angle) * dist;
     const dy = Math.sin(angle) * dist;
     star.style.left = `${10 + (i * 80) / (count - 1)}%`;
@@ -134,14 +134,14 @@ attachNavigationStarEffect();
 document.querySelectorAll('a, button, .proj-card, input, textarea').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cursor.classList.add('big');
-    ring.style.width       = '56px';
-    ring.style.height      = '56px';
+    ring.style.width = '56px';
+    ring.style.height = '56px';
     ring.style.borderColor = 'var(--b600)';
   });
   el.addEventListener('mouseleave', () => {
     cursor.classList.remove('big');
-    ring.style.width       = '40px';
-    ring.style.height      = '40px';
+    ring.style.width = '40px';
+    ring.style.height = '40px';
     ring.style.borderColor = 'var(--b400)';
   });
 });
@@ -154,7 +154,7 @@ if (canvas) {
   let lastX = 0, lastY = 0;
 
   function resizeCanvas() {
-    canvas.width  = canvas.parentElement.clientWidth;
+    canvas.width = canvas.parentElement.clientWidth;
     canvas.height = canvas.parentElement.clientHeight;
   }
   resizeCanvas();
@@ -170,13 +170,13 @@ if (canvas) {
     ctx.moveTo(lastX, lastY);
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.strokeStyle = 'rgba(30, 82, 134, 0.18)';
-    ctx.lineWidth   = 1.5;
-    ctx.lineCap     = 'round';
-    ctx.lineJoin    = 'round';
+    ctx.lineWidth = 1.5;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
     ctx.stroke();
     [lastX, lastY] = [e.offsetX, e.offsetY];
   });
-  canvas.addEventListener('mouseup',    () => { drawing = false; });
+  canvas.addEventListener('mouseup', () => { drawing = false; });
   canvas.addEventListener('mouseleave', () => { drawing = false; });
 
   canvas.addEventListener('touchstart', e => {
@@ -198,8 +198,8 @@ if (canvas) {
     ctx.moveTo(lastX, lastY);
     ctx.lineTo(x, y);
     ctx.strokeStyle = 'rgba(30, 82, 134, 0.18)';
-    ctx.lineWidth   = 1.5;
-    ctx.lineCap     = 'round';
+    ctx.lineWidth = 1.5;
+    ctx.lineCap = 'round';
     ctx.stroke();
     lastX = x; lastY = y;
   }, { passive: false });
@@ -232,4 +232,27 @@ if (avail) {
   window.addEventListener('scroll', () => {
     avail.style.opacity = window.scrollY > 120 ? '0' : '1';
   }, { passive: true });
+}
+
+// ── GLOBAL FOOTER ────────────────────────────────────────────────────────────
+const globalFooterContainer = document.getElementById('global-footer');
+if (globalFooterContainer) {
+  const isProjectPage = window.location.pathname.includes('/projects/');
+  const root = isProjectPage ? '../' : './';
+
+  globalFooterContainer.innerHTML = `
+    <footer>
+        <span class="footer-name">Cathy Tham</span>
+        <div class="footer-links">
+            <a class="footer-link" href="${root}main.html#work">Work</a>
+            <a class="footer-link" href="${root}side-work.html">Side Work</a>
+            <a class="footer-link" href="${root}about.html">About</a>
+            <a class="footer-link" href="${root}main.html#contact">Contact</a>
+        </div>
+        <span class="footer-copy">© 2026</span>
+    </footer>
+  `;
+  
+  if (typeof attachNavigationStarEffect === 'function') attachNavigationStarEffect(globalFooterContainer);
+  if (typeof bindCursorHoverStates === 'function') bindCursorHoverStates(globalFooterContainer);
 }

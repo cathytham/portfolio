@@ -1,189 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Cathy Tham — About</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styles/menu-overlay.css"/>
-<link rel="stylesheet" href="styles/base.css"/>
-<link rel="stylesheet" href="styles/about.css"/>
-<style></style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cathy Tham — About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles/menu-overlay.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/about.css" />
+  <style></style>
 </head>
+
 <body>
 
-<div class="cursor" id="cursor">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
-  </svg>
-</div>
-<div class="cursor-ring" id="cursor-ring"></div>
-
-<!-- ── NAV ── -->
-<nav aria-label="Site navigation">
-  <a class="nav-logo" href="main.html">Cathy Tham</a>
-  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-overlay">
-    Menu
-    <svg viewBox="0 0 24 24"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
-  </button>
-</nav>
-
-<section class="hero" aria-label="About Hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid" aria-hidden="true">
-    <div class="hero-grid-col"></div><div class="hero-grid-col"></div>
-    <div class="hero-grid-col"></div><div class="hero-grid-col"></div>
-    <div class="hero-grid-col"></div><div class="hero-grid-col"></div>
-    <div class="hero-grid-col"></div><div class="hero-grid-col"></div>
-    <div class="hero-grid-col"></div><div class="hero-grid-col"></div>
-    <div class="hero-grid-col"></div><div class="hero-grid-col"></div>
+  <div class="cursor" id="cursor">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+    </svg>
   </div>
+  <div class="cursor-ring" id="cursor-ring"></div>
 
-  <!-- Left: photo -->
-  <div class="hero-inner">
-  <div class="hero-photo-wrap">
-    <div class="photo-frame">
+  <!-- ── NAV ── -->
+  <nav aria-label="Site navigation">
+    <a class="nav-logo" href="main.html">Cathy Tham</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-overlay">
+      Menu
+      <svg viewBox="0 0 24 24">
+        <line x1="3" y1="8" x2="21" y2="8" />
+        <line x1="3" y1="16" x2="21" y2="16" />
+      </svg>
+    </button>
+  </nav>
 
-      <div class="photo-placeholder" aria-label="Photo placeholder">
-        <img class="photo-img" src="./images/pictureCathy.jpeg" alt="Cathy Tham" />
-      </div>
-
-
-    </div>
-  </div>
-
-  <!-- RIGHT: text & buttons -->
-  <div class="hero-text">
-    <p class="hero-eyebrow">About me</p>
-
-    <h1 class="hero-name">Cathy<br>Tham</h1>
-    <p class="hero-title-line">Biography</p>
-
-    <p class="hero-bio">
-      Cathy Tham is a student currently pursuing a bachelor’s degree in computer science and
-      Computation Arts at Concordia University in Montreal, Quebec. Her interests revolve around
-      interactive digital experiences that explore the way people interact with technology,
-      particularly with web applications. She wants to create spaces that allow users to participate
-      and make decisions.
-      Her projects include a various range of full-stack and AI-integrated applications, such as
-      SplitDecision, a group decision-making website that allows users to create polls, organize
-      teams, and manage shared schedules through a collaborative calendar. She has also developed
-      an AI-powered recipe generator that combines image recognition and generative models to
-      produce personalized recipes and visuals based on the user input. Across her work, she uses
-      tools such as React, JavaScript, Python, and database systems to build interactive applications
-      that focus collaboration, communication, and engagement.
-      Beside her academic work, Cathy has gained practical experience in the field through an
-      internship in mobile application development, which involved working with React Native,
-      Node.js, and MySQL in a SCRUM environment. She has experience in both the development and
-      design sides of projects, which enables her to look at projects from different angles. She is
-      currently interested in further exploring interactive systems, artificial intelligence, and digital
-      environments that support collaboration and real-world decision-making.
-</p>
-
-    <!-- buttons -->
-    <div class="hero-actions">
-
-      <a class="btn-primary" href="./cv/cathyTham_CV.pdf" download="Cathy-Tham-CV.pdf" aria-label="Download CV">
-        <svg viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
-        Download CV
-      </a>
-      <a class="btn-secondary" href="main.html#contact" aria-label="Get in touch">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        Get in touch
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<section class="about-sec" id="about" aria-labelledby="about-title">
-  <div class="sec-header">
-    <div>
-      <p class="sec-eye">More about me</p>
-      <h2 class="sec-title" id="about-title">Statement</h2>
-    </div>
-  </div>
-
-  <div class="artist-statement">
-    <p class="statement-text">
-      My work focuses mainly on interactive digital experiences and how people interact with
-      technology, websites, and AI systems. I am interested in how users interact with digital
-      environments and how these systems respond, adapt or generate content based on user input.
-      Through my projects, I have explored themes of interaction, collaboration and artificial
-      intelligence where users are the primary participants rather than passive viewers.
-      I primarily work with web technologies and programming languages such as JavaScript, React,
-      Python, and database systems. My process usually starts with an idea for an interactive system,
-      and then I design and build a website or application where the user’s actions influence the
-      result. One example is SplitDecision, a group decision-making website where users can create
-      polls, form teams, and share availability through a collaborative calendar. This project focuses
-      on how people make decisions together and how a digital platform can organize and influence
-      that process. Many of my projects focus on interaction, communication, and systems that
-      change based on user input.
-      Through my work, I want to create interactive and accessible digital experiences that make
-      technology feel more creative, collaborative, and engaging. I am interested in continuing to
-      explore interactive environments that simulate intelligent behaviour and digital environments
-      that reflect real-world collaboration and decision-making.
-    </p>
-    <p class="statement-attribution">— Cathy Tham, 2026</p>
-  </div>
-
-  <div class="about-content">
-    <!-- Skills — full categorized -->
-    <div class="skills-section">
-      <h3>Skills</h3>
-
-      <div class="skills-plain">
-        <div class="skill-item"><span class="skill-dot"></span><strong>Languages &amp; Technologies:</strong> Java · JavaScript · Python · React · React Native · Node.js · HTML · CSS · SQL · C# · C++</div>
-        <div class="skill-item"><span class="skill-dot"></span><strong>Databases:</strong> Oracle · MySQL · MongoDB · PostgreSQL</div>
-        <div class="skill-item"><span class="skill-dot"></span><strong>Design &amp; Tools:</strong> Figma · CapCut</div>
-        <div class="skill-item"><span class="skill-dot"></span><strong>Methodologies:</strong> Agile · SCRUM · Team Collaboration · Problem-Solving · Quick Learner</div>
-        <div class="skill-item"><span class="skill-dot"></span><strong>Soft Skills:</strong> Curious · Adaptable · Empathetic · Independent · Team-Oriented</div>
-        <div class="skill-item"><span class="skill-dot"></span><strong>Languages:</strong> English (Fluent) · French (Fluent)</div>
-      </div>
-
+  <section class="hero" aria-label="About Hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid" aria-hidden="true">
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
+      <div class="hero-grid-col"></div>
     </div>
 
-    <!-- Education & Experience -->
-    <div class="education-section">
-      <h3>Education</h3>
-      <div class="education-list">
-        <div class="education-item">
-          <div class="edu-title">Bachelor’s degree in Computer Science and Computation Arts (BCompSc)</div>
-          <div class="edu-institution">Concordia University</div>
-          <div class="edu-year">2023 – present</div>
-        </div>
-        <div class="education-item">
-          <div class="edu-title">Diploma of College Studies (DEC) in Computer Science Technology</div>
-          <div class="edu-institution">Dawson College</div>
-          <div class="edu-year">2019 – 2022</div>
-        </div>
-      <h3>Experiences</h3>
-      <div class="education-list">
-        <div class="education-item">
-          <div class="edu-title">Mobile Developer Intern</div>
-          <div class="edu-institution">Les Entreprises PUGGUM Inc.</div>
-          <div class="edu-year">sumer 2022</div>
+    <!-- Left: photo -->
+    <div class="hero-inner">
+      <div class="hero-photo-wrap">
+        <div class="photo-frame">
+
+          <div class="photo-placeholder" aria-label="Photo placeholder">
+            <img class="photo-img" src="./images/pictureCathy.jpeg" alt="Cathy Tham" />
+          </div>
+
+
         </div>
       </div>
+
+      <!-- RIGHT: text & buttons -->
+      <div class="hero-text">
+        <p class="hero-eyebrow">About me</p>
+
+        <h1 class="hero-name">Cathy<br>Tham</h1>
+        <p class="hero-title-line">Biography</p>
+
+        <p class="hero-bio">
+          Cathy Tham is a student currently pursuing a bachelor’s degree in computer science and
+          Computation Arts at Concordia University in Montreal, Quebec. Her interests revolve around
+          interactive digital experiences that explore the way people interact with technology,
+          particularly with web applications. She wants to create spaces that allow users to participate
+          and make decisions.</br>
+          Her projects include a various range of full-stack and AI-integrated applications, such as
+          SplitDecision, a group decision-making website that allows users to create polls, organize
+          teams, and manage shared schedules through a collaborative calendar. She has also developed
+          an AI-powered recipe generator that combines image recognition and generative models to
+          produce personalized recipes and visuals based on the user input. Across her work, she uses
+          tools such as React, JavaScript, Python, and database systems to build interactive applications
+          that focus collaboration, communication, and engagement.</br>
+          Beside her academic work, Cathy has gained practical experience in the field through an
+          internship in mobile application development, which involved working with React Native,
+          Node.js, and MySQL in a SCRUM environment. She has experience in both the development and
+          design sides of projects, which enables her to look at projects from different angles. She is
+          currently interested in further exploring interactive systems, artificial intelligence, and digital
+          environments that support collaboration and real-world decision-making.
+        </p>
+
+        <!-- buttons -->
+        <div class="hero-actions">
+
+          <a class="btn-primary" href="./cv/cathyTham_CV.pdf" download="Cathy-Tham-CV.pdf" aria-label="Download CV">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" />
+            </svg>
+            Download CV
+          </a>
+          <a class="btn-secondary" href="main.html#contact" aria-label="Get in touch">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+            </svg>
+            Get in touch
+          </a>
+
+        </div>
+      </div>
+  </section>
+
+  <section class="about-sec" id="about" aria-labelledby="about-title">
+    <div class="sec-header">
+      <div>
+        <p class="sec-eye">More about me</p>
+        <h2 class="sec-title" id="about-title">Statement</h2>
+      </div>
     </div>
-  </div>
-</section>
 
-<!-- ── FOOTER ── -->
-<footer>
-  <span class="footer-name">Cathy Tham</span>
-  <div class="footer-links">
-    <a class="footer-link" href="main.html#work">Work</a>
-    <a class="footer-link" href="side-work.html">Side Work</a>
-    <a class="footer-link" href="about.html">About</a>
-    <a class="footer-link" href="main.html#contact">Contact</a>
-  </div>
-  <span class="footer-copy">© 2026</span>
-</footer>
+    <div class="artist-statement">
+      <p class="statement-text">
+        My work focuses mainly on interactive digital experiences and how people interact with
+        technology, websites, and AI systems. I am interested in how users interact with digital
+        environments and how these systems respond, adapt or generate content based on user input.
+        Through my projects, I have explored themes of interaction, collaboration and artificial
+        intelligence where users are the primary participants rather than passive viewers.
+        I primarily work with web technologies and programming languages such as JavaScript, React,
+        Python, and database systems. My process usually starts with an idea for an interactive system,
+        and then I design and build a website or application where the user’s actions influence the
+        result. One example is SplitDecision, a group decision-making website where users can create
+        polls, form teams, and share availability through a collaborative calendar. This project focuses
+        on how people make decisions together and how a digital platform can organize and influence
+        that process. Many of my projects focus on interaction, communication, and systems that
+        change based on user input.
+        </br>Through my work, I want to create interactive and accessible digital experiences that make
+        technology feel more creative, collaborative, and engaging. I am interested in continuing to
+        explore interactive environments that simulate intelligent behaviour and digital environments
+        that reflect real-world collaboration and decision-making.
+      </p>
+      <p class="statement-attribution">— Cathy Tham, 2026</p>
+    </div>
 
-<script src="script.js"></script>
-<script src="menu-overlay.js"></script>
+    <div class="about-content">
+      <!-- Skills — full categorized -->
+      <div class="skills-section">
+        <h3>Skills</h3>
+
+        <div class="skills-plain">
+          <div class="skill-item"><span class="skill-dot"></span><strong>Languages &amp; Technologies:</strong> Java ·
+            JavaScript · Python · React · React Native · Node.js · HTML · CSS · SQL · C# · C++</div>
+          <div class="skill-item"><span class="skill-dot"></span><strong>Databases:</strong> Oracle · MySQL · MongoDB ·
+            PostgreSQL</div>
+          <div class="skill-item"><span class="skill-dot"></span><strong>Design &amp; Tools:</strong> Figma · CapCut
+          </div>
+          <div class="skill-item"><span class="skill-dot"></span><strong>Methodologies:</strong> Agile · SCRUM · Team
+            Collaboration · Problem-Solving · Quick Learner</div>
+          <div class="skill-item"><span class="skill-dot"></span><strong>Soft Skills:</strong> Curious · Adaptable ·
+            Empathetic · Independent · Team-Oriented</div>
+          <div class="skill-item"><span class="skill-dot"></span><strong>Languages:</strong> English (Fluent) · French
+            (Fluent)</div>
+        </div>
+
+      </div>
+
+      <!-- Education & Experience -->
+      <div class="education-section">
+        <h3>Education</h3>
+        <div class="education-list">
+          <div class="education-item">
+            <div class="edu-title">Bachelor’s degree in Computer Science and Computation Arts (BCompSc)</div>
+            <div class="edu-institution">Concordia University</div>
+            <div class="edu-year">2023 – present</div>
+          </div>
+          <div class="education-item">
+            <div class="edu-title">Diploma of College Studies (DEC) in Computer Science Technology</div>
+            <div class="edu-institution">Dawson College</div>
+            <div class="edu-year">2019 – 2022</div>
+          </div>
+          <h3>Experiences</h3>
+          <div class="education-list">
+            <div class="education-item">
+              <div class="edu-title">Mobile Developer Intern</div>
+              <div class="edu-institution">Les Entreprises PUGGUM Inc.</div>
+              <div class="edu-year">summer 2022</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <div id="global-footer"></div>
+
+  <script src="script.js"></script>
+  <script src="menu-overlay.js"></script>
 </body>
+
 </html>
