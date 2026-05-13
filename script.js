@@ -234,6 +234,53 @@ if (avail) {
   }, { passive: true });
 }
 
+// ── PROJ-GRID HORIZONTAL DRAG SCROLL ─────────────────────────────────────────
+document.querySelectorAll('.proj-grid').forEach(grid => {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  let isDragging = false;
+
+  grid.addEventListener('mousedown', (e) => {
+    isDown = true;
+    isDragging = false;
+    startX = e.pageX - grid.offsetLeft;
+    scrollLeft = grid.scrollLeft;
+  });
+
+  grid.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+
+  grid.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+
+  grid.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - grid.offsetLeft;
+    const walk = (x - startX) * 2; // scroll-fast
+    if (Math.abs(walk) > 5) {
+      isDragging = true;
+    }
+    grid.scrollLeft = scrollLeft - walk;
+  });
+
+  // Prevent default drag behaviors on links and images inside the grid
+  grid.querySelectorAll('a, img').forEach(el => {
+    el.addEventListener('dragstart', (e) => e.preventDefault());
+  });
+
+  // Prevent click if we were dragging
+  grid.addEventListener('click', (e) => {
+    if (isDragging) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, { capture: true });
+});
+
 // ── GLOBAL FOOTER ────────────────────────────────────────────────────────────
 const globalFooterContainer = document.getElementById('global-footer');
 if (globalFooterContainer) {
