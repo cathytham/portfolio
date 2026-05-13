@@ -292,7 +292,7 @@ if (globalFooterContainer) {
         <span class="footer-name">Cathy Tham</span>
         <div class="footer-links">
             <a class="footer-link" href="${root}main.html#work">Work</a>
-            <a class="footer-link" href="${root}side-work.html">Extra Work</a>
+            <a class="footer-link" href="${root}side-work.html">Side Work</a>
             <a class="footer-link" href="${root}about.html">About</a>
             <a class="footer-link" href="${root}main.html#contact">Contact</a>
         </div>
