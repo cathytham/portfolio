@@ -19,15 +19,18 @@ async function initMenuOverlay() {
         const menuBtn = document.getElementById('menu-btn');
         const menuOverlay = document.getElementById('menu-overlay');
         const menuClose = document.getElementById('menu-close');
+        const menuBackdrop = document.getElementById('menu-backdrop');
 
         // Open menu
         menuBtn.addEventListener('click', () => {
             menuOverlay.classList.add('open');
+            if (menuBackdrop) menuBackdrop.classList.add('open');
             menuBtn.setAttribute('aria-expanded', 'true');
         });
 
         // Close menu
         menuClose.addEventListener('click', closeMenu);
+        if (menuBackdrop) menuBackdrop.addEventListener('click', closeMenu);
 
         // Close on ESC key
         document.addEventListener('keydown', (e) => {
@@ -53,6 +56,7 @@ async function initMenuOverlay() {
             // Add a slight delay to allow native click actions (navigation) to complete
             setTimeout(() => {
                 menuOverlay.classList.remove('open');
+                if (menuBackdrop) menuBackdrop.classList.remove('open');
                 menuBtn.setAttribute('aria-expanded', 'false');
             }, 50);
         }
