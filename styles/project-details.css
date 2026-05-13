@@ -1,3 +1,0 @@
-@media(max-width:900px){.page-panel{grid-template-columns:1fr;gap:36px;}.project-image{min-height:300px;}}
-@media(max-width:600px){nav{padding:16px 20px;}.hero{padding:110px 20px 70px;}.page-panel{gap:28px;}.project-title{font-size:clamp(34px,10vw,58px);} }
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}
